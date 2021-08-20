@@ -10307,8 +10307,10 @@ document could be:
 
 </pre>
 </div>
-<div created="20210819185317768" modified="20210819191231046" tags="dww" title="Data quality by applying checks">
-<pre>Every constraints must be achieved by a corresponding check. Schema conformance, Choices, Dependencies, Unique Constraints, Referential Integrity, valid Changes, maximum number of array items, field checks etc. have to be configured with checks.    </pre>
+<div created="20210819185317768" modified="20210820092614657" tags="dww" title="Data quality by applying checks">
+<pre>Every constraints must be achieved by a corresponding check. Schema conformance, Choices, Dependencies, Unique Constraints, Referential Integrity, valid Changes, maximum number of array items, field checks etc. have to be configured with checks.    
+
+(!) Schema parsing is a builtin service of DWW. The parser output is of a defined type and can be used by checks (i.e. all objects of type &quot;org.foo.bla:Person&quot; have to include a not empty name attribute)</pre>
 </div>
 <div created="20210819201653688" modified="20210819204236529" tags="dww" title="data quality protection by guards">
 <pre>Checks are predicates on documents. Guards are predicates on document changes. </pre>
