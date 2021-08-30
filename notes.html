@@ -10171,7 +10171,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[Collection API]] [[content context]] [[Data quality by applying checks]] [[data quality protection by guards]] [[DWW builtin parser]] [[DWW Collection Service]] [[DWW Components]] [[Editing Context]] [[Java Prototype Roadmap]] [[Prototyping in Java]] [[Structuring Collections]]" title="$:/StoryList">
+<div list="$:/Import [[Collection API]] [[content context]] [[Data quality by applying checks]] [[data quality protection by guards]] [[DWW builtin parser]] [[DWW Collection Service]] [[DWW Components]] [[Editing Context]] [[Java Prototype Roadmap]] [[Prototyping in Java]] [[Structuring Collections]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210709131738036" modified="20210712052308320" title="$:/theme">
@@ -10369,14 +10369,14 @@ dww provides means to open, close, update and retrieve editing contexts.</pre>
 <div created="20210712060720595" modified="20210712060740555" tags="" title="PlantUML online">
 <pre>http://www.plantuml.com/plantuml/uml/</pre>
 </div>
-<div created="20210810055053964" modified="20210817191019910" tags="dww" title="Prototyping in Java">
+<div created="20210810055053964" modified="20210830200958515" tags="dww" title="Prototyping in Java">
 <pre>DWW should not be a java solution. The final solution will be a set of language neutral component interfaces plus documentation. 
 
 As long as the interfaces are not clear and fixed the development of rest based components seems to be an overhead to me (several layers, client, server, refactorings etc.). 
 
 A very highlevel separation of the components will be used as follows:
 
-&lt;img src=&quot;http://www.plantuml.com/plantuml/png/NP1HguCW5CVV_HG7dxgGVOQwtRW8qMGjUjZ6a7ARu2pC-lnpe0bxyeY_d_zpJhvORkpwKkZyr_Utyd2ihi0NmEu6bNv8BJ2IsWfpvuE03rCmkXEknjwiQTMSebigARI5OfwL7BYLauRabzlXcK97KyYoxCURhEx-QTD6bQdLvIxVkMtClUXMc4sw1sQcJOx200qiHg59GY3C16Yl24d2TyYVdWoT81G7sl72uRdGerlL6m00&quot;/&gt;
+&lt;img src=&quot;http://www.plantuml.com/plantuml/png/NP11JyGW48Nl_8e9fpLP-WiyR5s98Tcif5XxK6D8Eoe9qeRI_dvf0YNkgLFUzuRtECr1-x3yMlBss7MVv-U6Vu2UWSO_uExREAJ4k83-I_S86rDBiHDnfibv4VpwKhndQz05gAV9cbu7CpeuFEZG_noX5KUegkekEUMbVH9NLQpIBl7UEScADw-yAQf2lwA_3QLAg7Ut8IOAqe-h6T23o2mbkG5Za0i3sIV63daTITzCffYabDtfEj49WNi69NbP_l-OdD0DyU7_0000&quot;/&gt;
 
 | ''module'' | ''artifact'' |
 | DWW Client | dww-proto:dww-client |
@@ -10384,6 +10384,7 @@ A very highlevel separation of the components will be used as follows:
 | DWW Engine | dww-proto:dww-engine |
 | DWW SPI | dww-proto:dww-spi |
 | DWW Plugins | dww-proto:dww-plugins |
+| DWW Server | dww-proto:dww-server |
 
 Development project follows the [[Java Prototype Roadmap]]
 
