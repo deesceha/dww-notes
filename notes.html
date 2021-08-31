@@ -207,6 +207,8 @@ Error message and password prompt
 
 <li>data quality protection by guards</li>
 
+<li>Dependency Constraint</li>
+
 <li>DWW builtin parser</li>
 
 <li>DWW Collection Service</li>
@@ -10141,7 +10143,7 @@ Error message and password prompt
 <div created="20210709131500626" modified="20210709131500958" title="$:/SiteTitle">
 <pre>DWW</pre>
 </div>
-<div created="20210712061322430" modified="20210820124001323" title="$:/state/showeditpreview">
+<div created="20210712061322430" modified="20210831212921510" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
 <div created="20210709141002879" modified="20210709141012527" title="$:/state/sidebar">
@@ -10171,7 +10173,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="$:/Import [[Collection API]] [[content context]] [[Data quality by applying checks]] [[data quality protection by guards]] [[DWW builtin parser]] [[DWW Collection Service]] [[DWW Components]] [[Editing Context]] [[Java Prototype Roadmap]] [[Prototyping in Java]] [[Structuring Collections]]" title="$:/StoryList">
+<div list="[[Dependency Constraint]] [[Collection API]] [[content context]] [[Data quality by applying checks]] [[data quality protection by guards]] [[DWW builtin parser]] [[DWW Collection Service]] [[DWW Components]] [[Editing Context]] [[Java Prototype Roadmap]] [[Prototyping in Java]] [[Structuring Collections]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210709131738036" modified="20210712052308320" title="$:/theme">
@@ -10326,6 +10328,52 @@ document could be:
 </div>
 <div created="20210819201653688" modified="20210819204236529" tags="dww" title="data quality protection by guards">
 <pre>Checks are predicates on documents. Guards are predicates on document changes. </pre>
+</div>
+<div created="20210831212615694" modified="20210831212935832" tags="dww" title="Dependency Constraint">
+<pre>A dependency constraint binds nodes to a condition.
+
+Example: type: person schema: org.foo:schema1
+
+```
+{
+&quot;persons&quot; : 
+[
+{
+  &quot;firstname&quot; : &quot;Max&quot;,
+  &quot;name&quot;      : &quot;Miller&quot;,
+  &quot;sex&quot;       : &quot;male&quot;
+},
+{
+  &quot;firstname&quot; : &quot;Maggy&quot;,
+  &quot;name&quot;      : &quot;Miller&quot;,
+  &quot;sex&quot;       : &quot;female&quot;,
+  &quot;pregnancies&quot; : {
+  	&quot;obstetric history&quot; : &quot;Textual form for to keep this sample short&quot;
+  
+  }
+}
+]
+```
+
+
+Dependency:
+
+
+```
+{
+  &quot;constraint&quot;: &quot;dependency&quot;,
+  &quot;code&quot; : &quot;dependency.female.pregnancy&quot;
+  &quot;configuration&quot; : {        
+	  &quot;type&quot; : &quot;org.foo:schema1:person&quot;,
+	  &quot;condition&quot; : &quot;sex = 'female'&quot;,
+	  &quot;dependantPaths&quot;: [
+	  	&quot;$.pregnancies&quot;
+	  ]
+  }
+}
+```
+
+</pre>
 </div>
 <div created="20210820123950210" modified="20210824082651489" tags="dww" title="DWW builtin parser">
 <pre>A document is parsed according to a schemas type definition. As a result an Abstract Syntax Tree is produced.
