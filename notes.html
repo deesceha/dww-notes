@@ -10145,8 +10145,8 @@ Error message and password prompt
 <div created="20210709131500626" modified="20210709131500958" title="$:/SiteTitle">
 <pre>DWW</pre>
 </div>
-<div created="20210712061322430" modified="20210831212921510" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20210712061322430" modified="20210915093322999" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
 <div created="20210709141002879" modified="20210709141012527" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -10293,7 +10293,7 @@ Error message and password prompt
 <div created="20210820093352846" modified="20210820093453102" title="$:/view">
 <pre>classic</pre>
 </div>
-<div created="20210915091818025" modified="20210915092709904" tags="dww" title="Around ASTs">
+<div created="20210915091818025" modified="20210915093327145" tags="dww" title="Around ASTs">
 <pre>Useful functionality to work with ASTs would be:
 
 * node attachments (i.e. for schema alignment)
@@ -10301,6 +10301,16 @@ Error message and password prompt
 * get (sub) ast node for path
 * evaluate jexl on asts json document (mapped to java map) (asts json is available as $)
 * evaluate jexl on ast (ast is available as $$): i.e. &quot;$$.children!=null &amp;&amp; $$.children.length &gt; 0&quot;
+
+Possible java code:
+
+
+```
+Object o = Astor.forPath(ast, &quot;$[2].person&quot;).evaluate(&quot;$.name!=null &amp;&amp; $.name.startsWith('Foo') &amp;&amp; $$.type.equals('IeeePerson') &quot;);
+
+```
+
+
 </pre>
 </div>
 <div created="20210709131535675" modified="20210729092706392" tags="dww" title="Collection API">
