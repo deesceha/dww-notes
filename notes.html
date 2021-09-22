@@ -10147,7 +10147,7 @@ Error message and password prompt
 <div created="20210709131500626" modified="20210709131500958" title="$:/SiteTitle">
 <pre>DWW</pre>
 </div>
-<div created="20210712061322430" modified="20210922135030896" title="$:/state/showeditpreview">
+<div created="20210712061322430" modified="20210922140629156" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20210709141002879" modified="20210709141012527" title="$:/state/sidebar">
@@ -10433,8 +10433,8 @@ The [[DWW Collection Service]] depends on other services.
 
 dww provides means to open, close, update and retrieve editing contexts.</pre>
 </div>
-<div created="20210922062147934" modified="20210922135235581" tags="" title="Field checks">
-<pre>field checks:
+<div created="20210922062147934" modified="20210922141431188" tags="dww" title="Field checks">
+<pre>single field checks:
 
 * notnull
 * notempty
@@ -10449,6 +10449,18 @@ dww provides means to open, close, update and retrieve editing contexts.</pre>
 * duration
 * period (every day, every year)
 * elementOf (static enum, online reference etc. -&gt; powerful)
+
+multi condition:
+
+* mc
+** on schema-type or path
+** item name=&quot;a&quot; path=&quot;...&quot;
+** item name=&quot;b&quot; path=&quot;...&quot;
+** condition expr=&quot;a &gt; b &quot;
+
+-&gt; allows feedback on path level for complex conditions
+
+
 
 </pre>
 </div>
