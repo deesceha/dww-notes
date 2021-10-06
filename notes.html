@@ -10446,7 +10446,7 @@ The [[DWW Collection Service]] depends on other services.
 
 dww provides means to open, close, update and retrieve editing contexts.</pre>
 </div>
-<div created="20210922062147934" modified="20210922141431188" tags="dww" title="Field checks">
+<div created="20210922062147934" modified="20211006195318433" tags="dww" title="Field checks">
 <pre>single field checks:
 
 * notnull
@@ -10472,6 +10472,20 @@ multi condition:
 ** condition expr=&quot;a &gt; b &quot;
 
 -&gt; allows feedback on path level for complex conditions
+
+
+```
+{
+ &quot;id&quot; : [
+   {&quot;c&quot; : &quot;@NotNull&quot;},
+   {&quot;c&quot; : &quot;@Size&quot;, &quot;min&quot; : 2, &quot;max&quot; : 5 },
+   {&quot;c&quot; : &quot;@Min&quot;,  &quot;value&quot; : 12},
+   {&quot;c&quot; : &quot;@Max&quot;,  &quot;value&quot; : 4 },
+   {&quot;c&quot; : &quot;@Enum&quot;, &quot;items&quot; : [&quot;A&quot;, &quot;B&quot;]},
+  ]
+}
+```
+
 
 
 
