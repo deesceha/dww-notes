@@ -10190,7 +10190,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="DSL [[Around ASTs]] [[AST - attached processing data]] [[Checks Configuration]] [[Collection API]] [[content context]] [[Data quality by applying checks]] [[data quality protection by guards]] [[Dependency Constraint]] [[DWW builtin parser]] [[DWW Collection Service]] [[DWW Components]] [[Editing Context]] [[Field checks]] [[Java Prototype Roadmap]] [[Prototyping in Java]] [[Structuring Collections]] [[What about starting small :)]]" title="$:/StoryList">
+<div list="[[Around ASTs]] [[AST - attached processing data]] [[Checks Configuration]] [[Collection API]] [[content context]] [[Data quality by applying checks]] [[data quality protection by guards]] [[Dependency Constraint]] DSL [[DWW builtin parser]] [[DWW Collection Service]] [[DWW Components]] [[Editing Context]] [[Field checks]] [[Java Prototype Roadmap]] [[Prototyping in Java]] [[Structuring Collections]] [[What about starting small :)]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210709131738036" modified="20210712052308320" title="$:/theme">
@@ -10459,9 +10459,8 @@ Dependency:
 
 </pre>
 </div>
-<div created="20220113214007508" modified="20220113214037664" tags="dww" title="DSL">
-<pre>
-```
+<div created="20220113214007508" modified="20220115222641206" tags="dww" title="DSL">
+<pre>```
 type: validation
 rule:
  name: CHECK_01
@@ -10483,6 +10482,23 @@ rule:
     ends: onian
  
 ```
+
+or 
+
+
+```
+constraints:
+ NotNull:
+ - person.id
+ - person.name
+ - &quot;*/id&quot;
+ - &quot;*/name&quot;
+ Max:
+ - person.age: 20
+ - person.weight: ${person.age}*2
+
+```
+
 </pre>
 </div>
 <div created="20210820123950210" modified="20210824082651489" tags="dww" title="DWW builtin parser">
