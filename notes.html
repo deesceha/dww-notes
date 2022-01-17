@@ -10459,7 +10459,7 @@ Dependency:
 
 </pre>
 </div>
-<div created="20220113214007508" modified="20220115222641206" tags="dww" title="DSL">
+<div created="20220113214007508" modified="20220117223232691" tags="dww" title="DSL">
 <pre>```
 type: validation
 rule:
@@ -10498,7 +10498,43 @@ constraints:
  - person.weight: ${person.age}*2
 
 ```
+or
 
+
+```
+constraints:
+- type: 
+  # multiple types if constraints are common
+  - Person
+  - Animal
+  # on-fields for field level constraints
+  on-fields:
+  - fields:
+    - id
+    - name
+    constraints:
+    # constraints without args are named
+    - notnull
+    - notempty
+  - fields:
+    - age
+    constraints:
+    # constraints with one arg
+    - max: 120
+    # constraints named args
+    - range:
+       min: 10
+       max: 20
+    - regexp: ^[a-zA-Z]+$   
+  on-objects:  	
+  - constraints:         
+    - choice
+    - conditional
+  tags:
+  - Basic
+  - C178
+
+```
 </pre>
 </div>
 <div created="20210820123950210" modified="20210824082651489" tags="dww" title="DWW builtin parser">
